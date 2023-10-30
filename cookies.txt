@@ -1,0 +1,5 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+awwwards.com	TRUE	/	FALSE	1999999999	PHPSESSID	d132dtej0l54jfmqnqouatdmop
+www.awwwards.com	TRUE	/	FALSE	1999999999	samesite	none
+
