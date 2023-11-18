@@ -1,0 +1,42 @@
+<header id="header">
+    <nav>
+        <div class="left-menu">
+          <a href="#">Main</a>
+        </div>
+        <div class="right-menu">
+          <a href="#">Statistics</a>
+          <a href="#">Contact Us</a>
+        </div>
+      </nav>
+      <hr>
+      
+      <div class="header-main">
+        <a href="index.html" class="header-main__logo" aria-label="Awwwards"></a>
+      
+        <div class="header-search" data-search-target="search">
+          <div class="header-search__overlay" data-search-target="overlay" data-action="click->search#close"></div>
+          <div class="search-form">
+            <div class="search-form__field">
+              <button type="submit" class="search-form__button" aria-label="Search">
+                <span class="fa fa-search"></span>
+              </button>
+              <input type="text" value="" placeholder="Search in Inspiration" class="search-form__input js-search-input"
+                data-action="focus->search#show keyup->search#search" data-search-target="input">
+            </div>
+          </div>
+        </div>
+      
+        <div class="header-main__right">
+          <div class="header-main__user">
+            <!-- <strong class="header-main__link hidden-sm" data-controller="login" data-action="click->login#open">Log in</strong>
+            <strong class="header-main__link hidden-sm" data-controller="login" data-action="click->login#open">Sign Up</strong> -->
+          </div>
+      
+          <div class="header-main__bts">
+            <a href="pro.html" class="button button--rounded">Search</a>
+            <!-- <a href="submit/index.html" class="button button--outline--rounded">Register</a> -->
+          </div>
+        </div>
+      </div>
+      
+</header>
