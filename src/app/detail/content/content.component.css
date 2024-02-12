@@ -1,0 +1,33 @@
+
+.slider {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+}
+
+.rating-text {
+    flex: 1;
+}
+
+.rating-stars {
+    display: flex;
+}
+
+.rating-star {
+    font-size: 24px;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.rating-star.checked {
+    color: gold;
+}

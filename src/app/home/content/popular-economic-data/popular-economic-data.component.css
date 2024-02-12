@@ -1,3 +1,11 @@
+/* styles.css or your component-specific style file */
+h2{
+    font-family: "ms_gloriola_ii_std_semibold",sans-serif;
+    color: #000;
+}
+
+/* styles.css */
+/* styles.css */
 
 #content-header {
     display: flex;
@@ -6,7 +14,7 @@
 }
 
 #market-header {
-    font-size: 19px;
+    font-size: 16px;
     font-weight: 600;
 }
 

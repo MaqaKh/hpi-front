@@ -273,6 +273,7 @@ body.header-above #content {
 }
 
 body.header-above #header {
+    margin-top:1%;
     background: rgba(0, 0, 0, 0)
 }
 

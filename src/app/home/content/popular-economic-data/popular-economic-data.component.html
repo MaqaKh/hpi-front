@@ -2,7 +2,7 @@
     <section id="content" class="container">
 
       <div id="content-header">
-          <h2 id="market-header">Şəhərlər üzrə statistikalar</h2>
+          <h2 id="market-header">Iqtisadi görsədicilər</h2>
           <a href="#" id="hamisi-link">
               <span>hamisi</span>
           </a>
@@ -10,17 +10,17 @@
 
         <div class="anchor-section" id="market" style="margin-top:5%;">
             <div class="row">
-              <div class="col-md-4" style="position: relative; text-align: center;">
-                <dx-chart palette="Carmine" [dataSource]="baku">
+              <div class="col-md-6" style="position: relative; text-align: center;">
+                <dx-chart palette="#0D9CD9" [dataSource]="inflation">
                         <dxi-series
                          type="line"
                          argumentField="date"
-                         valueField="average"
-                         [point]="{ visible: false }" 
+                         valueField="value"
+                         [point]="{ visible: true }" 
                         >
                         </dxi-series>
                         <dxo-common-series-settings
-                         hoverMode="none"
+                         hoverMode="allArgumentPoints"
                         >
                         </dxo-common-series-settings>
                         <dxo-margin [bottom]="20"></dxo-margin>
@@ -40,36 +40,45 @@
                           itemTextPosition="bottom"
                         >
                         </dxo-legend>
-                        <dxo-title text="Baki">
+                        <dxo-title text="İnflasiya">
+                          <dxo-font
+                              size="23"
+                              weight="30"
+                              family="Times New Roman, Times, serif"
+                              color="#015C94">
+                          </dxo-font>
                           <dxo-subtitle text=""> </dxo-subtitle>
                         </dxo-title>
-                        <!-- <dxo-export [enabled]="true"></dxo-export> -->
-                        <dxo-tooltip [enabled]="false"></dxo-tooltip>
+                        <dxo-tooltip [enabled]="true"></dxo-tooltip>
                       </dx-chart>
                       <a href="#" style="text-decoration: none; color: black; transition: color 0.3s; position: absolute; bottom: 5; left: 50%; transform: translateX(-50%);">
                         <span style="border-bottom: 1px solid transparent;">Read more</span>
                     </a>
                 </div>
-                <div class="col-md-4">
-                    <dx-chart palette="Carmine" [dataSource]="xirdalan">
+                <div class="col-md-6">
+                    <dx-chart palette="#0D9CD9" [dataSource]="mortgageRate">
                         <dxi-series
                          type="line"
                          argumentField="date"
-                         valueField="average"
-                         [point]="{ visible: false }" 
+                         valueField="value"
+                         [point]="{ visible: true }" 
                         >
                         </dxi-series>
                         <dxo-common-series-settings
-                         hoverMode="none"
+                         hoverMode="allArgumentPoints"
                         >
                         </dxo-common-series-settings>
                         <dxo-margin [bottom]="20"></dxo-margin>
                         <dxo-argument-axis
+                          color="#95A3AB">
                             [valueMarginsEnabled]="false"
                             [argumentType]="'datetime'" >
                             <dxo-grid [visible]="false"></dxo-grid>
                             <dxo-label format="shortDate"></dxo-label> 
                         </dxo-argument-axis>
+                        <dxi-value-axis>
+                            
+                        </dxi-value-axis>
                         <dxo-legend
                          [visible]="false"
                           verticalAlignment="bottom"
@@ -77,45 +86,16 @@
                           itemTextPosition="bottom"
                         >
                         </dxo-legend>
-                        <dxo-title text="Xirdalan">
+                        <dxo-title text="Ipoteka Faizi">
+                          <dxo-font
+                              size="23"
+                              weight="30"
+                              family="Times New Roman, Times, serif"
+                              color="#015C94">
+                          </dxo-font>
                           <dxo-subtitle text=""> </dxo-subtitle>
                         </dxo-title>
-                        <!-- <dxo-export [enabled]="true"></dxo-export> -->
-                        <dxo-tooltip [enabled]="false"></dxo-tooltip>
-                      </dx-chart>
-                </div>
-                <div class="col-md-4">
-                    <dx-chart palette="Carmine" [dataSource]="sumqayit">
-                        <dxi-series
-                         type="line"
-                         argumentField="date"
-                         valueField="average"
-                         [point]="{ visible: false }" 
-                        >
-                        </dxi-series>
-                        <dxo-common-series-settings
-                         hoverMode="none"
-                        >
-                        </dxo-common-series-settings>
-                        <dxo-margin [bottom]="20"></dxo-margin>
-                        <dxo-argument-axis
-                            [valueMarginsEnabled]="false"
-                            [argumentType]="'datetime'" >
-                            <dxo-grid [visible]="false"></dxo-grid>
-                            <dxo-label format="shortDate"></dxo-label> 
-                        </dxo-argument-axis>
-                        <dxo-legend
-                         [visible]="false"
-                          verticalAlignment="bottom"
-                          horizontalAlignment="center"
-                          itemTextPosition="bottom"
-                        >
-                        </dxo-legend>
-                        <dxo-title text="Sumqayit">
-                          <dxo-subtitle text=""> </dxo-subtitle>
-                        </dxo-title>
-                        <!-- <dxo-export [enabled]="true"></dxo-export> -->
-                        <dxo-tooltip [enabled]="false"></dxo-tooltip>
+                        <dxo-tooltip [enabled]="true"></dxo-tooltip>
                       </dx-chart>
                 </div>
             </div>
