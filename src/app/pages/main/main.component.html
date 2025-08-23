@@ -1,0 +1,97 @@
+<div class="app-container">
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <!-- Logo -->
+      <div class="logo">
+        <div class="logo-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M20 10V8C20 6.9 19.1 6 18 6H16L14 4H10L8 6H6C4.9 6 4 6.9 4 8V18C4 19.1 4.9 20 6 20H18C19.1 20 20 19.1 20 18V10Z" 
+                  fill="currentColor"/>
+          </svg>
+        </div>
+        <span class="logo-text">Baku Homes</span>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="navigation">
+        <a href="#" class="nav-item active">Dashboard</a>
+        <a href="#" class="nav-item">District Analytics</a>
+        <a href="#" class="nav-item">Metro Station Analysis</a>
+        <a href="#" class="nav-item">Mark Analysis</a>
+        <a href="#" class="nav-item">Apartments</a>
+      </nav>
+
+      <!-- Right side -->
+      <div class="header-right">
+        <div class="language-selector">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="2"/>
+            <path d="M2 10h16M10 2a15.3 15.3 0 0 1 4 8 15.3 15.3 0 0 1-4 8 15.3 15.3 0 0 1-4-8 15.3 15.3 0 0 1 4-8z" 
+                  stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="profile-avatar">
+          <img src="assets/woman.png" 
+               alt="Profile" class="avatar-img">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="hero-section">
+      <div class="hero-background">
+        <img src="assets/intro2.png" alt="Baku cityscape" class="hero-image">
+        <div class="hero-overlay"></div>
+      </div>
+      
+      <div class="hero-content">
+        <h1 class="hero-title">Find Your Perfect Home in Baku</h1>
+        <p class="hero-subtitle">
+          Explore detailed property statistics and market trends to make informed decisions.
+        </p>
+        
+        <div class="search-container">
+          <div class="search-input-wrapper">
+            <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M17.5 17.5L13.875 13.875M15.8333 9.16667C15.8333 12.8486 12.8486 15.8333 9.16667 15.8333C5.48477 15.8333 2.5 12.8486 2.5 9.16667C2.5 5.48477 5.48477 2.5 9.16667 2.5C12.8486 2.5 15.8333 5.48477 15.8333 9.16667Z" 
+                    stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <input 
+              type="text" 
+              placeholder="Search for properties" 
+              class="search-input"
+            >
+            <div class="action-buttons">
+              <button class="btn btn-analyze" (click)="onAnalyze()">
+                Analyze
+              </button>
+              <button class="btn btn-search" (click)="onSearch()">
+                Search
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Market Stats -->
+    <app-market-stats></app-market-stats>
+    
+    <!-- Market Hotspots -->
+    <app-market-hotspots></app-market-hotspots>
+    
+    <!-- Economic Context -->
+    <app-economic-context></app-economic-context>
+    
+    <!-- User Centric Info -->
+    <app-user-centric-info></app-user-centric-info>
+
+    <app-quick-action-tiles></app-quick-action-tiles>
+    
+    <!-- Market Intelligence Feed -->
+    <app-market-intelligence-feed></app-market-intelligence-feed>
+  </main>
+</div>

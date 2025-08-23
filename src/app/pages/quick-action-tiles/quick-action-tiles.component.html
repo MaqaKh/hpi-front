@@ -1,0 +1,51 @@
+<section class="quick-action-tiles">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Quick Action Tiles</h2>
+    </div>
+    
+    <div class="tiles-grid">
+      <div 
+        class="action-tile" 
+        *ngFor="let tile of actionTiles; trackBy: trackByTileId"
+        (click)="onTileClick(tile)"
+        [attr.data-tile]="tile.id"
+        [attr.data-category]="tile.category"
+        [class.active]="tile.isActive"
+        tabindex="0"
+        role="button"
+        [attr.aria-label]="'Navigate to ' + tile.title"
+      >
+        <div class="tile-background" [ngStyle]="getTileBackgroundStyle(tile)">
+          <div class="tile-overlay"></div>
+        </div>
+        
+        <div class="tile-content">
+          <div class="content-wrapper">
+            <h3 class="tile-title">{{ tile.title }}</h3>
+            <p class="tile-description" *ngIf="tile.description">
+              {{ tile.description }}
+            </p>
+          </div>
+          
+          <!-- Optional metadata badge -->
+                    <div class="tile-metadata">
+            <span class="metadata-count">{{ tile.metadata?.count }}+</span>
+          </div>
+        </div>
+        
+        <!-- Hover overlay -->
+        <div class="tile-hover-overlay">
+          <div class="hover-content">
+            <div class="action-button">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                      d="M13 7l5 5-5 5M6 7l5 5-5 5"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

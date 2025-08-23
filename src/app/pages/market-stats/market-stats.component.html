@@ -1,0 +1,15 @@
+<div class="market-stats-container">
+  <div class="stats-grid">
+    <div class="stat-card" *ngFor="let stat of marketStats">
+      <div class="stat-content">
+        <h3 class="stat-label">{{ stat.label }}</h3>
+        <div class="stat-value" 
+             [class.positive]="stat.isPositive" 
+             [class.negative]="stat.isPositive === false">
+          {{ stat.value }}
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>

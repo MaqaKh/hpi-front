@@ -1,0 +1,30 @@
+<div 
+  class="button-switcher"
+  [class]="'size-' + size + ' variant-' + variant"
+  [attr.data-disabled]="disabled"
+  role="tablist"
+  [attr.aria-label]="'Switch between options'"
+>
+  <div class="switcher-container">
+    <button
+      *ngFor="let option of options; trackBy: trackByOptionId"
+      type="button"
+      [class]="getOptionClass(option)"
+      [disabled]="option.disabled || disabled"
+      [attr.aria-selected]="isSelected(option)"
+      [attr.aria-label]="option.label"
+      role="tab"
+      (click)="onOptionSelect(option)"
+    >
+      <!-- Optional icon -->
+      <span class="option-icon" *ngIf="option.icon">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor">
+          <!-- Icon paths would go here based on option.icon -->
+        </svg>
+      </span>
+      
+      <!-- Option label -->
+      <span class="option-label">{{ option.label }}</span>
+    </button>
+  </div>
+</div>

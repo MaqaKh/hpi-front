@@ -1,0 +1,43 @@
+<section class="economic-context">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Economic Context</h2>
+    </div>
+    
+    <div class="indicators-grid">
+      <div 
+        class="indicator-card" 
+        *ngFor="let indicator of economicIndicators; trackBy: trackByIndicatorId"
+        (click)="onIndicatorClick(indicator)"
+        [attr.data-status]="indicator.status"
+        [attr.data-indicator]="indicator.id"
+      >
+        <div class="card-content">
+          <div class="indicator-header">
+            <h3 class="indicator-label">{{ indicator.label }}</h3>
+            <div 
+              class="status-indicator" 
+              [style.color]="getStatusColor(indicator.status)"
+              *ngIf="indicator.status && indicator.status !== 'neutral'"
+            >
+              {{ getStatusIcon(indicator.status) }}
+            </div>
+          </div>
+          
+          <div class="indicator-value-container">
+            <div 
+              class="indicator-value" 
+              [style.color]="getStatusColor(indicator.status)"
+            >
+              {{ indicator.value }}
+            </div>
+          </div>
+          
+          <div class="indicator-meta" *ngIf="indicator.description">
+            <p class="indicator-description">{{ indicator.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,252 @@
+.button-switcher {
+  display: inline-flex;
+  width: fit-content;
+  
+  &[data-disabled="true"] {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.switcher-container {
+  display: flex;
+  background: #f1f5f9;
+  border-radius: 12px;
+  padding: 4px;
+  position: relative;
+  width: fit-content;
+  
+  // Default variant styling
+  &.variant-default {
+    border-radius: 8px;
+  }
+  
+  &.variant-rounded {
+    border-radius: 12px;
+  }
+  
+  &.variant-pills {
+    border-radius: 50px;
+  }
+}
+
+.switcher-option {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  color: #64748b;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  z-index: 1;
+  
+  // Default size
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 8px;
+  
+  &:hover:not(.active):not(:disabled) {
+    color: #475569;
+    background: rgba(255, 255, 255, 0.5);
+  }
+  
+  &.active {
+    color: #1e293b;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+  }
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  &:focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+  }
+}
+
+.option-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  svg {
+    width: 16px;
+    height: 16px;
+    stroke-width: 1.5;
+  }
+}
+
+.option-label {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: 1;
+}
+
+// Size variations
+.button-switcher.size-small {
+  .switcher-container {
+    border-radius: 8px;
+    padding: 2px;
+  }
+  
+  .switcher-option {
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 6px;
+    
+    .option-icon svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
+
+.button-switcher.size-medium {
+  .switcher-container {
+    border-radius: 12px;
+    padding: 4px;
+  }
+  
+  .switcher-option {
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 8px;
+    
+    .option-icon svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+.button-switcher.size-large {
+  .switcher-container {
+    border-radius: 16px;
+    padding: 6px;
+  }
+  
+  .switcher-option {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 12px;
+    
+    .option-icon svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+// Variant-specific styling
+.button-switcher.variant-default {
+  .switcher-container {
+    background: #e2e8f0;
+  }
+  
+  .switcher-option {
+    border-radius: 6px;
+    
+    &.active {
+      background: white;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+  }
+}
+
+.button-switcher.variant-rounded {
+  .switcher-container {
+    background: #f1f5f9;
+  }
+  
+  .switcher-option {
+    border-radius: 8px;
+    
+    &.active {
+      background: white;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+.button-switcher.variant-pills {
+  .switcher-container {
+    background: #f1f5f9;
+    border-radius: 50px;
+  }
+  
+  .switcher-option {
+    border-radius: 50px;
+    
+    &.active {
+      background: white;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+// Animation for smooth transition
+.switcher-option {
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// Two-option specific styling (common case)
+.switcher-container:has(.switcher-option:nth-child(2):last-child) {
+  .switcher-option {
+    min-width: 100px;
+    
+    @media (max-width: 480px) {
+      min-width: 80px;
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .button-switcher.size-medium {
+    .switcher-option {
+      padding: 8px 14px;
+      font-size: 13px;
+    }
+  }
+  
+  .button-switcher.size-large {
+    .switcher-option {
+      padding: 10px 18px;
+      font-size: 15px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .button-switcher {
+    width: 100%;
+    
+    .switcher-container {
+      width: 100%;
+    }
+    
+    .switcher-option {
+      flex: 1;
+      min-width: 0;
+    }
+  }
+}
+
+// Accessibility improvements
+@media (prefers-reduced-motion: reduce) {
+  .switcher-option {
+    transition: none;
+  }
+}

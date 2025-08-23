@@ -1,0 +1,49 @@
+<section class="user-centric-info">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Essential User-Centric Information</h2>
+    </div>
+    
+    <div class="features-grid">
+      <div 
+        class="feature-card" 
+        *ngFor="let feature of features; trackBy: trackByFeatureId"
+        (click)="onFeatureClick(feature)"
+        [attr.data-feature]="feature.id"
+        [class.active]="feature.isActive"
+        tabindex="0"
+        role="button"
+        [attr.aria-label]="'Navigate to ' + feature.title"
+      >
+        <div class="card-content">
+          <div class="feature-icon">
+            <img 
+              [src]="getIconSvg(feature.icon)" 
+              [alt]="feature.title + ' icon'"
+              width="24"
+              height="24"
+              aria-hidden="true"
+            >
+          </div>
+          
+          <div class="feature-text">
+            <h3 class="feature-title">{{ feature.title }}</h3>
+            <p class="feature-description">{{ feature.description }}</p>
+          </div>
+          
+          <div class="feature-arrow" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" 
+                    d="M7.5 15 12.5 10 7.5 5"/>
+            </svg>
+          </div>
+        </div>
+        
+        <!-- Optional metadata badge -->
+        <div class="feature-metadata" *ngIf="feature.metadata?.count">
+          <span class="metadata-badge">{{ feature.metadata?.count }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

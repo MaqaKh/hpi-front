@@ -1,0 +1,78 @@
+<section class="market-intelligence-feed">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Market Intelligence Feed</h2>
+    </div>
+    
+    <div class="feed-container">
+      <div 
+        class="feed-item"
+        *ngFor="let item of feedItems; trackBy: trackByFeedItemId"
+        (click)="onFeedItemClick(item)"
+        [attr.data-type]="item.type"
+        [attr.data-priority]="item.priority"
+        tabindex="0"
+        role="button"
+        [attr.aria-label]="'Read ' + item.title"
+      >
+        <div class="item-content">
+          <div class="content-text">
+            <div class="item-meta">
+              <span 
+                class="category-badge"
+                [style.background-color]="getCategoryColor(item.category)"
+              >
+                {{ item.category }}
+              </span>
+              <span class="publish-time">{{ getRelativeTime(item.publishedAt) }}</span>
+            </div>
+            
+            <h3 class="item-title">{{ item.title }}</h3>
+            <p class="item-description">{{ item.description }}</p>
+            
+            <div class="item-footer" *ngIf="item.readTime || item.author">
+              <span class="read-time" *ngIf="item.readTime">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor">
+                  <circle cx="8" cy="8" r="7"/>
+                  <polyline points="8,4 8,8 10,10"/>
+                </svg>
+                {{ item.readTime }} min read
+              </span>
+              <span class="author" *ngIf="item.author">
+                {{ item.author }}
+              </span>
+            </div>
+          </div>
+          
+          <div class="item-image">
+            <img 
+              [src]="item.image" 
+              [alt]="item.title"
+              loading="lazy"
+            >
+            <div class="image-overlay"></div>
+          </div>
+        </div>
+        
+        <!-- Hover indicator -->
+        <div class="hover-indicator">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" 
+                  d="M7.5 15 12.5 10 7.5 5"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Load more section -->
+    <div class="feed-actions">
+      <button class="load-more-btn" type="button">
+        <span>Load More Articles</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" 
+                d="M4 12 8 8 12 12"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>

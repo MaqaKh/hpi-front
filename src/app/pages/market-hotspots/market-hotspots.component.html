@@ -1,0 +1,31 @@
+<section class="market-hotspots">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Market Hotspots</h2>
+    </div>
+    
+    <div class="hotspots-grid">
+      <div 
+        class="hotspot-card" 
+        *ngFor="let hotspot of hotspots; trackBy: trackByHotspotId"
+        (click)="onDistrictClick(hotspot)"
+        [attr.data-district]="hotspot.id"
+      >
+        <div class="card-image-container">
+          <img 
+            [src]="hotspot.image" 
+            [alt]="hotspot.name + ' district view'"
+            class="card-image"
+            loading="lazy"
+          >
+          <div class="image-overlay"></div>
+        </div>
+        
+        <div class="card-content">
+          <h3 class="district-name">{{ hotspot.name }}</h3>
+          <p class="price-change-text">{{ hotspot.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
