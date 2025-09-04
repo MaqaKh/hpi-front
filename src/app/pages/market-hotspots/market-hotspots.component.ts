@@ -22,7 +22,7 @@ export class MarketHotspotsComponent implements OnInit {
       name: 'Yasamal',
       priceChange: '+5%',
       priceChangeValue: 5,
-      image: 'assets/market-hotspot1.svg',
+      image: 'assets/baku/city-2.png',
       description: 'Highest Price Change: +5%'
     },
     {
@@ -30,7 +30,7 @@ export class MarketHotspotsComponent implements OnInit {
       name: 'Sabail',
       priceChange: '+4.2%',
       priceChangeValue: 4.2,
-      image: 'assets/market-hotspot2.svg',
+      image: 'assets/baku/city-3.png',
       description: 'Highest Price Change: +4.2%'
     },
     {
@@ -38,7 +38,7 @@ export class MarketHotspotsComponent implements OnInit {
       name: 'Nasimi',
       priceChange: '+3.8%',
       priceChangeValue: 3.8,
-      image: 'assets/market-hotspot3.svg',
+      image: 'assets/baku/city-1.png',
       description: 'Highest Price Change: +3.8%'
     }
   ];

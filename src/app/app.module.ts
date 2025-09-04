@@ -11,6 +11,7 @@ import { UserCentricInfoComponent } from './pages/user-centric-info/user-centric
 import { QuickActionTilesComponent } from './pages/quick-action-tiles/quick-action-tiles.component';
 import { MarketIntelligenceFeedComponent } from './pages/market-intelligence-feed/market-intelligence-feed.component';
 import { ButtonSwitcherComponent } from './shared/button-switcher/button-switcher.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ButtonSwitcherComponent } from './shared/button-switcher/button-switche
     UserCentricInfoComponent,
     QuickActionTilesComponent,
     MarketIntelligenceFeedComponent,
-    ButtonSwitcherComponent
+    ButtonSwitcherComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

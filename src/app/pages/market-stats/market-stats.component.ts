@@ -15,12 +15,12 @@ export class MarketStatsComponent {
   marketStats: MarketStat[] = [
     {
       label: 'Average Property Price',
-      value: '₼425,000',
+      value: '₼ 425,000',
       isPositive: true
     },
     {
       label: 'Monthly Market Growth',
-      value: '+2.4%',
+      value: '+ 2.4%',
       isPositive: true
     },
     {

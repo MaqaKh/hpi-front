@@ -1,5 +1,5 @@
 .market-intelligence-feed {
-  padding: 48px 0;
+  padding: 32px 0;
   
   @media (max-width: 768px) {
     padding: 32px 0;
@@ -7,8 +7,7 @@
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 2%;
   padding: 0 24px;
   
   @media (max-width: 768px) {
@@ -391,10 +390,6 @@
 }
 
 // Priority-based styling
-.feed-item[data-priority="high"] {
-  border-left: 4px solid #3b82f6;
-}
-
 .feed-item[data-priority="medium"] {
   border-left: 4px solid #059669;
 }
