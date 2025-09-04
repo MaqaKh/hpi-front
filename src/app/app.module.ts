@@ -12,6 +12,8 @@ import { QuickActionTilesComponent } from './pages/quick-action-tiles/quick-acti
 import { MarketIntelligenceFeedComponent } from './pages/market-intelligence-feed/market-intelligence-feed.component';
 import { ButtonSwitcherComponent } from './shared/button-switcher/button-switcher.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { DistrictAnalysisComponent } from './pages/district-analysis/district-analysis.component';
+import { InteractiveMapComponent } from './shared/interactive-map/interactive-map.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { FooterComponent } from './shared/footer/footer.component';
     QuickActionTilesComponent,
     MarketIntelligenceFeedComponent,
     ButtonSwitcherComponent,
-    FooterComponent
+    FooterComponent,
+    DistrictAnalysisComponent,
+    InteractiveMapComponent
   ],
   imports: [
     BrowserModule,
