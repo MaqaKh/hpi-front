@@ -16,8 +16,8 @@
       <!-- Navigation -->
       <nav class="navigation">
         <a routerLink="/" class="nav-item">Dashboard</a>
-        <a routerLink="/district-analysis" class="nav-item active">District Analytics</a>
-        <a routerLink="/metro-analysis" class="nav-item">Metro Station Analysis</a>
+        <a routerLink="/district-analysis" class="nav-item">District Analytics</a>
+        <a routerLink="/metro-analysis" class="nav-item active">Metro Station Analysis</a>
         <a href="#" class="nav-item">Mark Analysis</a>
         <a href="#" class="nav-item">Apartments</a>
       </nav>
@@ -40,46 +40,11 @@
 
   <!-- Main Content -->
   <main class="main-content">
-    <!-- <div class="hero-section">
-      <div class="hero-background">
-        <img src="assets/baku/city-5.png" alt="Baku district analysis" class="hero-image">
-        <div class="hero-overlay"></div>
-      </div>
-      
-      <div class="hero-content">
-        <h1 class="hero-title">District Analysis & Market Insights</h1>
-        <p class="hero-subtitle">
-          Deep dive into Baku's districts with comprehensive market data and investment opportunities.
-        </p>
-        
-        <div class="search-container">
-          <div class="search-input-wrapper">
-            <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M17.5 17.5L13.875 13.875M15.8333 9.16667C15.8333 12.8486 12.8486 15.8333 9.16667 15.8333C5.48477 15.8333 2.5 12.8486 2.5 9.16667C2.5 5.48477 5.48477 2.5 9.16667 2.5C12.8486 2.5 15.8333 5.48477 15.8333 9.16667Z" 
-                    stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <input 
-              type="text" 
-              placeholder="Search for districts" 
-              class="search-input"
-            >
-            <div class="action-buttons">
-              <button class="btn btn-analyze">
-                Analyze District
-              </button>
-              <button class="btn btn-search">
-                Search
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
     
     <section class="hero-section">
         <div class="hero-content">
-            <h1 class="hero-title">District Analysis</h1>
-            <p class="hero-description">Explore detailed insights into Baku's districts, including price trends, availability, and growth statistics.</p>
+            <h1 class="hero-title">Metro Station Analysis</h1>
+            <p class="hero-description">Explore detailed insights into Baku's metro stations, including price trends, availability, and growth statistics around metro areas.</p>
         </div>
     </section>
 
@@ -87,7 +52,7 @@
     <!-- Add this section after the hero section -->
     <section class="map-section">
         <div class="container">
-            <app-interactive-map></app-interactive-map>
+            <app-interactive-metro-map></app-interactive-metro-map>
         </div>
     </section>
     

@@ -13,7 +13,9 @@ import { MarketIntelligenceFeedComponent } from './pages/market-intelligence-fee
 import { ButtonSwitcherComponent } from './shared/button-switcher/button-switcher.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { DistrictAnalysisComponent } from './pages/district-analysis/district-analysis.component';
+import { MetroAnalysisComponent } from './pages/metro-analysis/metro-analysis.component';
 import { InteractiveMapComponent } from './shared/interactive-map/interactive-map.component';
+import { InteractiveMetroMapComponent } from './shared/interactive-metro-map/interactive-metro-map.component';
 import { MarketStatisticsComponent } from './shared/market-statistics/market-statistics.component';
 import { PriceTrendChartComponent } from './shared/price-trend-chart/price-trend-chart.component';
 import { FeaturedPropertiesComponent } from './shared/featured-properties/featured-properties.component';
@@ -32,7 +34,9 @@ import { DistrictInfoComponent } from './shared/district-info/district-info.comp
     ButtonSwitcherComponent,
     FooterComponent,
     DistrictAnalysisComponent,
+    MetroAnalysisComponent,
     InteractiveMapComponent,
+    InteractiveMetroMapComponent,
     MarketStatisticsComponent,
     PriceTrendChartComponent,
     FeaturedPropertiesComponent,
