@@ -8,17 +8,37 @@
 }
 
 .map-wrapper {
-  width: 60%;
-  max-width: 800px;
+  width: 50%;
+  max-width: 1200px;
   overflow: hidden;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  background: #f8f9fa;
+  background: #ffffff;
   
   svg {
     width: 100%;
     height: auto;
     display: block;
+    margin-top: 50px;
+    transform: rotate(20deg);
+    transform-origin: center;
+  }
+}
+
+.district-group {
+  cursor: pointer;
+  
+  path {
+    transition: 0.3s ease !important;
+    fill: rgb(234, 234, 234) !important;
+    stroke: rgb(234, 234, 234) !important;
+    stroke-width: 1 !important;
+    filter: none !important;
+  }
+  
+  &:hover path {
+    fill: rgb(74, 144, 226) !important;
+    stroke: rgb(74, 144, 226) !important;
+    filter: brightness(1.1) !important;
   }
 }
 

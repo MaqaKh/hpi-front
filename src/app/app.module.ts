@@ -14,6 +14,10 @@ import { ButtonSwitcherComponent } from './shared/button-switcher/button-switche
 import { FooterComponent } from './shared/footer/footer.component';
 import { DistrictAnalysisComponent } from './pages/district-analysis/district-analysis.component';
 import { InteractiveMapComponent } from './shared/interactive-map/interactive-map.component';
+import { MarketStatisticsComponent } from './shared/market-statistics/market-statistics.component';
+import { PriceTrendChartComponent } from './shared/price-trend-chart/price-trend-chart.component';
+import { FeaturedPropertiesComponent } from './shared/featured-properties/featured-properties.component';
+import { DistrictInfoComponent } from './shared/district-info/district-info.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,11 @@ import { InteractiveMapComponent } from './shared/interactive-map/interactive-ma
     ButtonSwitcherComponent,
     FooterComponent,
     DistrictAnalysisComponent,
-    InteractiveMapComponent
+    InteractiveMapComponent,
+    MarketStatisticsComponent,
+    PriceTrendChartComponent,
+    FeaturedPropertiesComponent,
+    DistrictInfoComponent
   ],
   imports: [
     BrowserModule,

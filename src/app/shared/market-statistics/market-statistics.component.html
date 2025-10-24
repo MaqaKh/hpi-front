@@ -1,0 +1,43 @@
+<section class="market-statistics">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Market Statistics</h2>
+    </div>
+    
+    <div class="statistics-grid">
+      <div 
+        class="statistic-card" 
+        *ngFor="let statistic of marketStatistics; trackBy: trackByStatisticId"
+        (click)="onStatisticClick(statistic)"
+        [attr.data-status]="statistic.status"
+        [attr.data-statistic]="statistic.id"
+      >
+        <div class="card-content">
+          <div class="statistic-header">
+            <h3 class="statistic-label">{{ statistic.label }}</h3>
+            <div 
+              class="status-indicator" 
+              [style.color]="getStatusColor(statistic.status)"
+              *ngIf="statistic.status && statistic.status !== 'neutral'"
+            >
+              {{ getStatusIcon(statistic.status) }}
+            </div>
+          </div>
+          
+          <div class="statistic-value-container">
+            <div 
+              class="statistic-value" 
+              [style.color]="getStatusColor(statistic.status)"
+            >
+              {{ statistic.value }}
+            </div>
+          </div>
+          
+          <div class="statistic-meta" *ngIf="statistic.description">
+            <p class="statistic-description">{{ statistic.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

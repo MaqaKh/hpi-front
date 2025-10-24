@@ -1,0 +1,298 @@
+.district-info {
+  background: #ffffff;
+  animation: fadeIn 0.8s ease-out;
+
+  .container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 2%;
+  }
+
+  .district-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    width: 100%;
+    animation: slideUp 0.6s ease-out;
+  }
+
+  .district-header {
+    margin-bottom: 32px;
+    text-align: left;
+
+    .district-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin: 0 0 12px 0;
+      letter-spacing: -0.02em;
+    }
+
+    .district-description {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      color: #64748b;
+      margin: 0;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+  }
+
+  .district-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .metric-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #f1f5f9;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .metric-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      color: #64748b;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .metric-value {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1e293b;
+
+      &.price-range {
+        color: #059669;
+        font-size: 1.1rem;
+      }
+
+      &.total-listings {
+        color: #3b82f6;
+        font-size: 1.5rem;
+      }
+
+      &.new-listings {
+        color: #f59e0b;
+        font-size: 1.5rem;
+      }
+
+      &.investment-score {
+        color: #8b5cf6;
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+  .district-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .btn {
+      width: 100%;
+      padding: 16px 24px;
+      border: none;
+      border-radius: 12px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &.btn-primary {
+        background: #3b82f6;
+        color: #ffffff;
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+
+        &:hover {
+          background: #2563eb;
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        &:active {
+          transform: translateY(0);
+        }
+      }
+
+      &.btn-secondary {
+        background: #10b981;
+        color: #ffffff;
+        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+
+        &:hover {
+          background: #059669;
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+        }
+
+        &:active {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}
+
+// Animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Responsive design
+@media (max-width: 1024px) {
+  .district-info {
+    .district-metrics {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .district-info {
+    padding: 32px 0;
+
+    .container {
+      padding: 0 16px;
+    }
+
+    .district-card {
+      padding: 32px 24px;
+      border-radius: 16px;
+
+      .district-header {
+        margin-bottom: 24px;
+
+        .district-title {
+          font-size: 1.75rem;
+        }
+
+        .district-description {
+          font-size: 0.95rem;
+        }
+      }
+
+      .district-metrics {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-bottom: 24px;
+      }
+
+      .metric-item {
+        padding: 16px 12px;
+
+        .metric-label {
+          font-size: 0.85rem;
+          margin-bottom: 6px;
+        }
+
+        .metric-value {
+          font-size: 1.1rem;
+
+          &.price-range {
+            font-size: 1rem;
+          }
+
+          &.total-listings,
+          &.new-listings {
+            font-size: 1.3rem;
+          }
+
+          &.investment-score {
+            font-size: 1.1rem;
+          }
+        }
+      }
+
+      .district-actions {
+        .btn {
+          padding: 14px 20px;
+          font-size: 0.95rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .district-info {
+    padding: 24px 0;
+
+    .district-card {
+      padding: 24px 20px;
+
+      .district-header {
+        .district-title {
+          font-size: 1.5rem;
+        }
+      }
+
+      .district-metrics {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .metric-item {
+        padding: 14px 10px;
+
+        .metric-label {
+          font-size: 0.8rem;
+        }
+
+        .metric-value {
+          font-size: 1rem;
+
+          &.total-listings,
+          &.new-listings {
+            font-size: 1.2rem;
+          }
+        }
+      }
+
+      .district-actions {
+        .btn {
+          padding: 12px 18px;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}

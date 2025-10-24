@@ -40,7 +40,7 @@
 
   <!-- Main Content -->
   <main class="main-content">
-    <div class="hero-section">
+    <!-- <div class="hero-section">
       <div class="hero-background">
         <img src="assets/baku/city-5.png" alt="Baku district analysis" class="hero-image">
         <div class="hero-overlay"></div>
@@ -74,26 +74,34 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     
-    <!-- District-specific components will go here -->
-    <div class="page-content">
-      <div class="content-section">
-        <h2 class="section-title">District Overview</h2>
-        <p class="section-description">
-          Comprehensive analysis of Baku's districts with detailed market insights, price trends, and investment opportunities.
-        </p>
-      </div>
-    </div>
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">District Analysis</h1>
+            <p class="hero-description">Explore detailed insights into Baku's districts, including price trends, availability, and growth statistics.</p>
+        </div>
+    </section>
 
+    
     <!-- Add this section after the hero section -->
     <section class="map-section">
-    <div class="container">
-        <h2>Interactive District Map</h2>
-        <p class="section-description">Click on any district to explore detailed market data and insights.</p>
-        <app-interactive-map></app-interactive-map>
-    </div>
+        <div class="container">
+            <app-interactive-map></app-interactive-map>
+        </div>
     </section>
+    
+    <!-- District Information Section -->
+    <app-district-info [selectedDistrict]="'Nasimi District'"></app-district-info>
+    
+    <!-- Market Statistics Section -->
+    <app-market-statistics></app-market-statistics>
+    
+    <!-- Price Trend Chart Section -->
+    <app-price-trend-chart></app-price-trend-chart>
+    
+    <!-- Featured Properties Section -->
+    <app-featured-properties></app-featured-properties>
     
     <!-- Footer -->
     <app-footer></app-footer>

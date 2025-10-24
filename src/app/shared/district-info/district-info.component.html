@@ -1,0 +1,36 @@
+<section class="district-info">
+  <div class="container">
+    <div class="district-card">
+      <!-- District Header -->
+      <div class="district-header">
+        <h2 class="district-title">{{ currentDistrict.name }}</h2>
+        <p class="district-description">{{ currentDistrict.description }}</p>
+      </div>
+
+      <!-- District Metrics -->
+      <div class="district-metrics">
+        <div class="metric-item">
+          <div class="metric-label">Price Range</div>
+          <div class="metric-value price-range">{{ currentDistrict.priceRange }}</div>
+        </div>
+
+        <div class="metric-item">
+          <div class="metric-label">Total Listings</div>
+          <div class="metric-value total-listings">{{ currentDistrict.totalListings }}</div>
+        </div>
+
+        <div class="metric-item">
+          <div class="metric-label">New This Week</div>
+          <div class="metric-value new-listings">{{ currentDistrict.newThisWeek }}</div>
+        </div>
+
+        <div class="metric-item">
+          <div class="metric-label">Investment Score</div>
+          <div class="metric-value investment-score">{{ currentDistrict.investmentScore }}</div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
