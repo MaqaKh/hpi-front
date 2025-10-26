@@ -29,23 +29,23 @@ export class InteractiveMetroMapComponent implements OnInit, AfterViewInit {
 
     console.log('SVG element found:', svgElement);
 
-    // Get all station circles
-    const stationCircles = svgElement.querySelectorAll('circle');
-    console.log('Found circles:', stationCircles.length);
+    // Get all station groups
+    const stationGroups = svgElement.querySelectorAll('g[class]');
+    console.log('Found station groups:', stationGroups.length);
 
-    stationCircles.forEach((circle: SVGCircleElement, index: number) => {
-      // Set cursor on the circle
-      circle.style.cursor = 'pointer';
-      circle.style.transition = 'all 0.3s ease';
+    stationGroups.forEach((group: SVGGElement, index: number) => {
+      // Set cursor on the group
+      group.style.cursor = 'pointer';
+      group.style.transition = 'all 0.3s ease';
 
       // Get class name for station identification
-      const className = this.getElementClassName(circle);
-      console.log(`Circle ${index}: className = "${className}"`);
+      const className = this.getElementClassName(group);
+      console.log(`Group ${index}: className = "${className}"`);
 
-      // Add event listeners to the circle
-      circle.addEventListener('mouseenter', () => this.onStationHover(circle, className));
-      circle.addEventListener('mouseleave', () => this.onStationLeave(circle, className));
-      circle.addEventListener('click', () => this.onStationClick(circle, className));
+      // Add event listeners to the group
+      group.addEventListener('mouseenter', () => this.onStationHover(group, className));
+      group.addEventListener('mouseleave', () => this.onStationLeave(group, className));
+      group.addEventListener('click', () => this.onStationClick(group, className));
     });
 
     // Also handle metro lines (paths)
@@ -71,7 +71,7 @@ export class InteractiveMetroMapComponent implements OnInit, AfterViewInit {
     return element.classList.length > 0 ? element.classList[0] : 'unknown';
   }
 
-  private onStationHover(circle: SVGCircleElement, className: string): void {
+  private onStationHover(group: SVGGElement, className: string): void {
     if (this.hoveredStationName === className) return; // Prevent infinite loop
 
     console.log(`Station hover: ${className}`);
@@ -84,29 +84,35 @@ export class InteractiveMetroMapComponent implements OnInit, AfterViewInit {
 
     this.hoveredStationName = className;
 
-    // Simple color change only - no transform to avoid hover loop
-    circle.style.fill = '#3b82f6';
-    circle.style.stroke = '#1e40af';
-    circle.style.strokeWidth = '2';
+    // Highlight all circles in the group
+    const circles = group.querySelectorAll('circle');
+    circles.forEach((circle: SVGCircleElement) => {
+      circle.style.fill = '#3b82f6';
+      circle.style.stroke = '#1e40af';
+      circle.style.strokeWidth = '2';
+    });
   }
 
-  private onStationLeave(circle: SVGCircleElement, className: string): void {
+  private onStationLeave(group: SVGGElement, className: string): void {
     // Only clear hoveredStationName if this station is not selected
     if (this.selectedMetroStation !== className) {
       this.hoveredStationName = null;
     }
 
     if (this.selectedMetroStation !== className) {
-      // Reset both circle and corresponding path with same class
+      // Reset both group and corresponding path with same class
       this.highlightElementsByClass(className, false);
 
-      circle.style.fill = 'white';
-      circle.style.stroke = 'black';
-      circle.style.strokeWidth = '1';
+      const circles = group.querySelectorAll('circle');
+      circles.forEach((circle: SVGCircleElement) => {
+        circle.style.fill = 'white';
+        circle.style.stroke = 'black';
+        circle.style.strokeWidth = '1';
+      });
     }
   }
 
-  private onStationClick(circle: SVGCircleElement, className: string): void {
+  private onStationClick(group: SVGGElement, className: string): void {
     console.log(`Station clicked: ${className}`);
 
     // Reset all stations first
@@ -116,10 +122,13 @@ export class InteractiveMetroMapComponent implements OnInit, AfterViewInit {
     this.selectedMetroStation = className;
     this.hoveredStationName = className; // Keep the name displayed
 
-    // Apply selected styles to this station - only color changes, no transform
-    circle.style.fill = '#1e40af';
-    circle.style.stroke = '#1e3a8a';
-    circle.style.strokeWidth = '3';
+    // Apply selected styles to all circles in the group
+    const circles = group.querySelectorAll('circle');
+    circles.forEach((circle: SVGCircleElement) => {
+      circle.style.fill = '#1e40af';
+      circle.style.stroke = '#1e3a8a';
+      circle.style.strokeWidth = '3';
+    });
 
     console.log(`Metro station selected: ${className}`);
   }
@@ -176,12 +185,15 @@ export class InteractiveMetroMapComponent implements OnInit, AfterViewInit {
     const svgElement = this.elementRef.nativeElement.querySelector('#baku-metro-map svg');
     if (!svgElement) return;
 
-    // Reset all station circles
-    const stationCircles = svgElement.querySelectorAll('circle');
-    stationCircles.forEach((circle: SVGCircleElement) => {
-      circle.style.fill = 'white';
-      circle.style.stroke = 'black';
-      circle.style.strokeWidth = '1';
+    // Reset all station groups
+    const stationGroups = svgElement.querySelectorAll('g[class]');
+    stationGroups.forEach((group: SVGGElement) => {
+      const circles = group.querySelectorAll('circle');
+      circles.forEach((circle: SVGCircleElement) => {
+        circle.style.fill = 'white';
+        circle.style.stroke = 'black';
+        circle.style.strokeWidth = '1';
+      });
     });
   }
 

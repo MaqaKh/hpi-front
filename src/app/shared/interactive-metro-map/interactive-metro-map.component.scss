@@ -13,7 +13,7 @@
   overflow: hidden;
   border-radius: 12px;
   background: #ffffff;
-  
+
   svg {
     width: 100%;
     height: auto;
@@ -22,21 +22,39 @@
   }
 }
 
-// Metro station styles
-circle {
+// Metro station group styles
+g[class] {
   cursor: pointer;
   transition: all 0.3s ease;
   
   &:hover {
     filter: brightness(1.1);
   }
+  
+  // Ensure all elements in the group are interactive
+  circle, rect, text {
+    pointer-events: all;
+  }
+}
+
+// Individual element styles
+circle {
+  transition: all 0.3s ease;
+}
+
+rect {
+  transition: all 0.3s ease;
+}
+
+text {
+  transition: all 0.3s ease;
 }
 
 // Metro line styles
 path {
   cursor: pointer;
   transition: all 0.3s ease;
-  
+
   &:hover {
     filter: brightness(1.1);
   }
@@ -47,7 +65,7 @@ path {
   display: flex;
   align-items: center;
   gap: 16px;
-  
+
   .reset-btn {
     padding: 8px 16px;
     background: #007bff;
@@ -58,12 +76,12 @@ path {
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     transition: background 0.3s ease;
-    
+
     &:hover {
       background: #0056b3;
     }
   }
-  
+
   .selected-info {
     margin: 0;
     font-family: 'Inter', sans-serif;
@@ -77,7 +95,7 @@ path {
   .map-wrapper {
     width: 90%;
   }
-  
+
   .map-controls {
     flex-direction: column;
     align-items: flex-start;
