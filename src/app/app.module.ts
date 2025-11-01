@@ -20,6 +20,9 @@ import { MarketStatisticsComponent } from './shared/market-statistics/market-sta
 import { PriceTrendChartComponent } from './shared/price-trend-chart/price-trend-chart.component';
 import { FeaturedPropertiesComponent } from './shared/featured-properties/featured-properties.component';
 import { DistrictInfoComponent } from './shared/district-info/district-info.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { ApartmentsComponent } from './pages/apartments/apartments.component';
+import { FilterBarComponent } from './pages/apartments/filter-bar.component';
 
 @NgModule({
   declarations: [
@@ -40,11 +43,14 @@ import { DistrictInfoComponent } from './shared/district-info/district-info.comp
     MarketStatisticsComponent,
     PriceTrendChartComponent,
     FeaturedPropertiesComponent,
-    DistrictInfoComponent
+    DistrictInfoComponent,
+    HeaderComponent,
+    ApartmentsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FilterBarComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

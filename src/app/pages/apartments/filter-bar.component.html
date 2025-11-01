@@ -1,0 +1,57 @@
+<div class="border-t border-slate-200 dark:border-slate-800">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3">
+    <form [formGroup]="filterForm">
+      <div class="flex flex-wrap items-center gap-4">
+        <!-- Property Type Select -->
+        <select
+          formControlName="propertyType"
+          class="rounded-lg border border-slate-300 dark:border-slate-700 bg-background-light dark:bg-background-dark focus:border-primary focus:ring-2 focus:ring-primary focus:ring-opacity-50 text-sm px-3 py-2 cursor-pointer"
+        >
+          <option value="">Property Type</option>
+          <option value="apartment">Apartment</option>
+          <option value="house">House</option>
+          <option value="villa">Villa</option>
+        </select>
+
+        <!-- Rooms Select -->
+        <select
+          formControlName="rooms"
+          class="rounded-lg border border-slate-300 dark:border-slate-700 bg-background-light dark:bg-background-dark focus:border-primary focus:ring-2 focus:ring-primary focus:ring-opacity-50 text-sm px-3 py-2 cursor-pointer"
+        >
+          <option value="">Rooms</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4+">4+</option>
+        </select>
+
+        <!-- Price Range -->
+        <div class="flex items-center space-x-2">
+          <input
+            formControlName="minPrice"
+            type="number"
+            placeholder="Min Price"
+            class="w-28 rounded-lg border border-slate-300 dark:border-slate-700 bg-background-light dark:bg-background-dark focus:border-primary focus:ring-2 focus:ring-primary focus:ring-opacity-50 text-sm px-3 py-2"
+          />
+          <span class="text-slate-400">-</span>
+          <input
+            formControlName="maxPrice"
+            type="number"
+            placeholder="Max Price"
+            class="w-28 rounded-lg border border-slate-300 dark:border-slate-700 bg-background-light dark:bg-background-dark focus:border-primary focus:ring-2 focus:ring-primary focus:ring-opacity-50 text-sm px-3 py-2"
+          />
+        </div>
+
+        <!-- More Filters Button -->
+        <button
+          type="button"
+          (click)="onMoreFilters()"
+          class="flex items-center space-x-2 px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+        >
+          <span class="material-icons-outlined text-lg">tune</span>
+          <span>More Filters</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

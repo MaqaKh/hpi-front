@@ -1,0 +1,234 @@
+/* Styles for the filter bar. The project uses utility classes (Tailwind-like); add project-specific rules here if needed. */
+/* ============================================
+   FILTER BAR COMPONENT STYLES
+   ============================================ */
+
+/* Container */
+.filter-bar-wrapper {
+  border-top: 1px solid #e2e8f0;
+}
+
+.filter-bar-wrapper.dark {
+  border-top-color: #1e293b;
+}
+
+.filter-bar-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .filter-bar-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .filter-bar-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Form Controls Wrapper */
+.filter-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Select Elements */
+.filter-select {
+  border-radius: 0.5rem;
+  border: 1px solid #cbd5e1;
+  background-color: #f8fafc;
+  font-size: 0.875rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  appearance: none;
+  padding-right: 2rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.filter-select:hover {
+  border-color: #94a3b8;
+}
+
+.filter-select.dark {
+  border-color: #475569;
+  background-color: #1e293b;
+  color: #e2e8f0;
+}
+
+.filter-select.dark:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.filter-select.dark:hover {
+  border-color: #64748b;
+}
+
+/* Input Elements */
+.filter-input {
+  border-radius: 0.5rem;
+  border: 1px solid #cbd5e1;
+  background-color: #f8fafc;
+  font-size: 0.875rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.filter-input-price-min {
+  width: 7rem;
+}
+
+.filter-input-price-max {
+  width: 7rem;
+}
+
+.filter-input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.filter-input:hover {
+  border-color: #94a3b8;
+}
+
+.filter-input.dark {
+  border-color: #475569;
+  background-color: #1e293b;
+  color: #e2e8f0;
+}
+
+.filter-input.dark:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.filter-input.dark:hover {
+  border-color: #64748b;
+}
+
+.filter-input::placeholder {
+  color: #cbd5e1;
+}
+
+.filter-input.dark::placeholder {
+  color: #64748b;
+}
+
+/* Price Range Container */
+.price-range-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.price-separator {
+  color: #a0aec0;
+}
+
+/* More Filters Button */
+.filter-more-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-more-btn:hover {
+  background-color: #f1f5f9;
+}
+
+.filter-more-btn:active {
+  background-color: #e2e8f0;
+}
+
+.filter-more-btn.dark {
+  border-color: #475569;
+  color: #e2e8f0;
+}
+
+.filter-more-btn.dark:hover {
+  background-color: #334155;
+}
+
+.filter-more-btn.dark:active {
+  background-color: #475569;
+}
+
+.filter-more-btn-icon {
+  font-size: 1.125rem;
+}
+
+/* Input number spinner removal (Chrome, Safari, Edge, Firefox) */
+.filter-input::-webkit-outer-spin-button,
+.filter-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.filter-input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Accessibility */
+.filter-select:focus-visible,
+.filter-input:focus-visible,
+.filter-more-btn:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .filter-controls {
+    gap: 0.75rem;
+  }
+
+  .filter-select,
+  .filter-input {
+    font-size: 1rem;
+  }
+
+  .filter-input-price-min,
+  .filter-input-price-max {
+    width: 6rem;
+  }
+}
