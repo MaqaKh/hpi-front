@@ -1,0 +1,165 @@
+.following-container {
+  max-width: 1200px;
+  margin: 0 auto 32px auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.following-header {
+  padding: 32px 32px 0 32px;
+}
+
+.following-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 24px;
+}
+
+.tabs-container {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.tabs {
+  display: flex;
+  gap: 0;
+}
+
+.tab {
+  padding: 12px 0;
+  margin-right: 32px;
+  font-size: 16px;
+  color: #6b7280;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+  position: relative;
+
+  &.active {
+    color: #3b82f6;
+    border-bottom-color: #3b82f6;
+  }
+
+  &:hover:not(.active) {
+    color: #374151;
+  }
+}
+
+.content {
+  padding: 32px;
+}
+
+.districts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.district-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 24px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: #d1d5db;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+}
+
+.district-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.district-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.district-price {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.district-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.district-info {
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.4;
+
+  span {
+    margin-right: 8px;
+
+    &:not(:last-child)::after {
+      content: "•";
+      margin-left: 8px;
+      color: #d1d5db;
+    }
+  }
+}
+
+.growth-percentage {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 2px 0;
+
+  &.positive {
+    color: #10b981;
+  }
+
+  &.negative {
+    color: #ef4444;
+  }
+}
+
+@media (max-width: 768px) {
+  .following-container {
+    margin: 0 10px 32px 10px;
+    border-radius: 8px;
+  }
+
+  .following-header {
+    padding: 20px 20px 0 20px;
+  }
+
+  .following-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tab {
+    white-space: nowrap;
+    margin-right: 24px;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  .districts-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .district-card {
+    padding: 20px;
+  }
+}

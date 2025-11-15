@@ -1,0 +1,32 @@
+<div class="recommendations-container">
+  <div class="header">
+    <h2 class="title">
+      <span class="bulb-icon">💡</span>
+      Personalized Recommendations
+    </h2>
+  </div>
+
+  <div class="content">
+    <div class="recommendations-grid">
+      <div 
+        *ngFor="let recommendation of recommendations" 
+        class="recommendation-card">
+        <div class="card-header">
+          <span class="card-icon">{{ recommendation.icon }}</span>
+          <span class="card-title">{{ recommendation.title }}</span>
+        </div>
+        <div class="card-description">
+          {{ recommendation.description }}
+        </div>
+        <div class="card-action">
+          <button 
+            class="btn"
+            [class.btn-secondary]="recommendation.actionType === 'secondary'"
+            (click)="onActionClick(recommendation.actionHandler, recommendation)">
+            {{ recommendation.actionText }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

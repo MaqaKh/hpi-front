@@ -1,7 +1,7 @@
 <header class="header">
   <div class="header-content">
     <!-- Logo -->
-    <div class="logo">
+    <a routerLink="/" class="logo">
       <div class="logo-icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
           <path d="M20 10V8C20 6.9 19.1 6 18 6H16L14 4H10L8 6H6C4.9 6 4 6.9 4 8V18C4 19.1 4.9 20 6 20H18C19.1 20 20 19.1 20 18V10Z" 
@@ -9,14 +9,14 @@
         </svg>
       </div>
       <span class="logo-text">Baku Homes</span>
-    </div>
+    </a>
 
     <!-- Navigation -->
     <nav class="navigation">
-  <a routerLink="/" routerLinkActive="active" class="nav-item">Dashboard</a>
+  <a routerLink="/dashboard" routerLinkActive="active" class="nav-item">Dashboard</a>
   <a routerLink="/district-analysis" routerLinkActive="active" class="nav-item">District Analytics</a>
   <a routerLink="/metro-analysis" routerLinkActive="active" class="nav-item">Metro Station Analysis</a>
-  <a href="#" class="nav-item">Mark Analysis</a>
+  <a routerLink="/mark-analysis" routerLinkActive="active" class="nav-item">Mark Analysis</a>
   <a routerLink="/apartments" routerLinkActive="active" class="nav-item">Apartments</a>
     </nav>
 

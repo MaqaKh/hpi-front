@@ -1,0 +1,15 @@
+<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
+  <div>
+    <h1 class="text-3xl font-bold text-slate-900 dark:text-white">{{ title }}</h1>
+    <p class="text-slate-500 dark:text-slate-400 mt-1">{{ resultsCount }}</p>
+  </div>
+  <div class="mt-4 sm:mt-0">
+    <select
+      class="rounded-lg border-slate-300 dark:border-slate-700 bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary focus:ring-opacity-50">
+      <option>Sort by: Newest First</option>
+      <option>Sort by: Price (Low to High)</option>
+      <option>Sort by: Price (High to Low)</option>
+      <option>Sort by: Most Popular</option>
+    </select>
+  </div>
+</div>

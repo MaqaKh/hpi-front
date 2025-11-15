@@ -1,0 +1,135 @@
+.recommendations-container {
+  max-width: 1200px;
+  margin: 0 auto 32px auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.header {
+  padding: 32px 32px 24px 32px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bulb-icon {
+  font-size: 24px;
+}
+
+.content {
+  padding: 32px;
+}
+
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.recommendation-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 24px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: #d1d5db;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.card-icon {
+  font-size: 16px;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.card-description {
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.card-action {
+  margin-top: auto;
+}
+
+.btn {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+
+  &:hover {
+    background: #2563eb;
+  }
+
+  &.btn-secondary {
+    background: transparent;
+    color: #6b7280;
+    border: 1px solid #d1d5db;
+
+    &:hover {
+      background: #f9fafb;
+      color: #374151;
+      border-color: #9ca3af;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .recommendations-container {
+    margin: 0 10px 32px 10px;
+    border-radius: 8px;
+  }
+
+  .header {
+    padding: 20px 20px 16px 20px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  .recommendations-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .recommendation-card {
+    padding: 20px;
+  }
+}

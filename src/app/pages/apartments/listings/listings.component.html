@@ -1,0 +1,38 @@
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+  <ng-container *ngFor="let item of displayItems">
+    <div class="bg-white dark:bg-slate-800/50 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col overflow-hidden">
+      <div class="relative">
+        <img [src]="item.image" [alt]="item.title" class="w-full h-56 object-cover" />
+        <div *ngIf="item.badge" class="absolute top-3 right-3 bg-green-500 text-white text-xs font-semibold px-2.5 py-1 rounded-full">{{ item.badge }}</div>
+      </div>
+      <div class="p-5 flex flex-col flex-grow">
+        <div class="mb-4">
+          <p class="text-3xl font-bold text-slate-900 dark:text-white">{{ item.price }}</p>
+          <h3 class="text-lg font-semibold mt-1 text-slate-800 dark:text-slate-100">{{ item.title }}</h3>
+        </div>
+        <div class="text-sm text-slate-500 dark:text-slate-400 border-t border-b border-slate-200 dark:border-slate-700 py-3 my-4">
+          <span class="inline-flex items-center mr-4"><span class="material-icons-outlined mr-1.5 text-lg">bed</span> {{ item.beds }}</span>
+          <span class="inline-flex items-center mr-4"><span class="material-icons-outlined mr-1.5 text-lg">bathtub</span> {{ item.baths }}</span>
+          <span class="inline-flex items-center"><span class="material-icons-outlined mr-1.5 text-lg">straighten</span> {{ item.size }}</span>
+        </div>
+        <div class="flex items-center mb-4">
+          <img [src]="item.agentImage" [alt]="item.agentName" class="w-10 h-10 rounded-full object-cover" />
+          <div class="ml-3">
+            <p class="font-semibold text-sm text-slate-700 dark:text-slate-200">{{ item.agentName }}</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Agent</p>
+          </div>
+        </div>
+        <div class="mt-auto grid grid-cols-2 gap-3 pt-2">
+          <button class="w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2">
+            <span class="material-icons-outlined text-xl">call</span>
+            <span>Contact Agent</span>
+          </button>
+          <button class="w-full bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold py-2.5 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors flex items-center justify-center space-x-2">
+            <span class="material-icons-outlined text-xl">favorite_border</span>
+            <span>Save</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

@@ -1,0 +1,55 @@
+<div class="performance-container">
+  <div class="header">
+    <h2 class="title">Your Districts Performance (Last 6 Months)</h2>
+  </div>
+
+  <div class="content">
+    <!-- Price Trends Chart Section -->
+    <div class="chart-section">
+      <h3 class="section-title">Price Trends</h3>
+      <div class="chart-placeholder">
+        <!-- Chart will be rendered here -->
+        Chart Component Integration Point
+      </div>
+    </div>
+
+    <!-- Market Activity Section -->
+    <div class="market-section">
+      <h3 class="section-title">Market Activity</h3>
+      
+      <div class="market-heat-header">
+        <span class="fire-icon">🔥</span>
+        <span class="market-heat-title">Market Heat Index</span>
+      </div>
+
+      <div class="districts-list">
+        <div *ngFor="let district of districts" class="district-item">
+          <div class="district-header">
+            <div class="district-name">{{ district.name }}</div>
+            <div class="heat-indicators">
+              <div 
+                *ngFor="let isActive of getHeatDots(district.heatLevel); index as i" 
+                class="heat-dot" 
+                [class.inactive]="!isActive">
+              </div>
+            </div>
+          </div>
+          <div class="district-stats">
+            <span class="stat-item">
+              <span class="stat-icon eye-icon">👁</span>
+              <span>{{ formatNumber(district.stats.views.count) }} views ({{ district.stats.views.change }})</span>
+            </span>
+            <span class="stat-item">
+              <span class="stat-icon heart-icon">💚</span>
+              <span>{{ district.stats.saves.count }} saves ({{ district.stats.saves.change }})</span>
+            </span>
+            <span class="stat-item">
+              <span class="stat-icon phone-icon">📞</span>
+              <span>{{ district.stats.contacts.count }} contacts ({{ district.stats.contacts.change }})</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

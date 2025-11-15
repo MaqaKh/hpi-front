@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,7 +24,20 @@ import { FeaturedPropertiesComponent } from './shared/featured-properties/featur
 import { DistrictInfoComponent } from './shared/district-info/district-info.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { ApartmentsComponent } from './pages/apartments/apartments.component';
-import { FilterBarComponent } from './pages/apartments/filter-bar.component';
+import { FilterBarComponent } from './pages/apartments/filter-bar/filter-bar.component';
+import { ActiveFiltersComponent } from './pages/apartments/active-filters/active-filters.component';
+import { FilterHeaderComponent } from './pages/apartments/filter/filter-header.component';
+import { ListingsComponent } from './pages/apartments/listings/listings.component';
+import { PaginationComponent } from './shared/pagination/pagination.component';
+import { AdvancedFilterComponent } from './pages/apartments/advanced-filter/advanced-filter.component';
+import { MarkAnalysisComponent } from './pages/mark-analysis/mark-analysis.component';
+import { MarkCheckboxComponent } from './pages/mark-analysis/mark-checkbox/mark-checkbox.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { PriceAlertsComponent } from './pages/dashboard/price-alerts/price-alerts.component';
+import { FollowingComponent } from './pages/dashboard/following/following.component';
+import { SavedApartmentComponent } from './pages/dashboard/saved-apartment/saved-apartment.component';
+import { PerformanceComponent } from './pages/dashboard/performance/performance.component';
+import { RecommendationComponent } from './pages/dashboard/recommendation/recommendation.component';
 
 @NgModule({
   declarations: [
@@ -45,10 +60,25 @@ import { FilterBarComponent } from './pages/apartments/filter-bar.component';
     FeaturedPropertiesComponent,
     DistrictInfoComponent,
     HeaderComponent,
-    ApartmentsComponent
+    ApartmentsComponent,
+    FilterHeaderComponent,
+    ListingsComponent,
+    PaginationComponent,
+    AdvancedFilterComponent,
+    MarkAnalysisComponent,
+    MarkCheckboxComponent,
+    DashboardComponent,
+    PriceAlertsComponent,
+    FollowingComponent,
+    SavedApartmentComponent,
+    PerformanceComponent,
+    RecommendationComponent,
+    ActiveFiltersComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
+    FormsModule,
     AppRoutingModule,
     FilterBarComponent
   ],

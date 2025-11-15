@@ -1,0 +1,114 @@
+<div class="following-container">
+  <div class="following-header">
+    <h2 class="following-title">Following</h2>
+    
+    <div class="tabs-container">
+      <div class="tabs">
+        <div class="tab" 
+             [class.active]="isActiveTab('districts')"
+             (click)="switchTab('districts')">
+          Districts (4)
+        </div>
+        <div class="tab" 
+             [class.active]="isActiveTab('apartments')"
+             (click)="switchTab('apartments')">
+          Apartments (12)
+        </div>
+        <div class="tab" 
+             [class.active]="isActiveTab('metro')"
+             (click)="switchTab('metro')">
+          Metro Stations (2)
+        </div>
+        <div class="tab" 
+             [class.active]="isActiveTab('marks')"
+             (click)="switchTab('marks')">
+          Marks (1)
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="tab-content" *ngIf="isActiveTab('districts')">
+      <div class="districts-grid">
+        <div class="district-card">
+          <div class="district-header">
+            <div class="district-name">Sabail District</div>
+            <div class="district-price">$1,520</div>
+          </div>
+          <div class="district-meta">
+            <div class="district-info">
+              <span>Central</span>
+              <span>High demand</span>
+              <span>23 available</span>
+            </div>
+            <div class="growth-percentage negative">-3.2%</div>
+          </div>
+        </div>
+
+        <div class="district-card">
+          <div class="district-header">
+            <div class="district-name">Yasamal District</div>
+            <div class="district-price">$1,280</div>
+          </div>
+          <div class="district-meta">
+            <div class="district-info">
+              <span>Mixed</span>
+              <span>Growing</span>
+              <span>18 available</span>
+            </div>
+            <div class="growth-percentage positive">+2.4%</div>
+          </div>
+        </div>
+
+        <div class="district-card">
+          <div class="district-header">
+            <div class="district-name">Nasimi District</div>
+            <div class="district-price">$1,350</div>
+          </div>
+          <div class="district-meta">
+            <div class="district-info">
+              <span>Residential</span>
+              <span>Best value</span>
+              <span>24 available</span>
+            </div>
+            <div class="growth-percentage positive">+1.8%</div>
+          </div>
+        </div>
+
+        <div class="district-card">
+          <div class="district-header">
+            <div class="district-name">Narimanov District</div>
+            <div class="district-price">$1,180</div>
+          </div>
+          <div class="district-meta">
+            <div class="district-info">
+              <span>Established</span>
+              <span>Stable</span>
+              <span>15 available</span>
+            </div>
+            <div class="growth-percentage positive">+1.2%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" *ngIf="isActiveTab('apartments')">
+      <div style="text-align: center; padding: 40px; color: #6b7280;">
+        <p>12 saved apartments will be displayed here</p>
+      </div>
+    </div>
+
+    <div class="tab-content" *ngIf="isActiveTab('metro')">
+      <div style="text-align: center; padding: 40px; color: #6b7280;">
+        <p>2 followed metro stations will be displayed here</p>
+      </div>
+    </div>
+
+    <div class="tab-content" *ngIf="isActiveTab('marks')">
+      <div style="text-align: center; padding: 40px; color: #6b7280;">
+        <p>1 saved mark will be displayed here</p>
+      </div>
+    </div>
+  </div>
+</div>

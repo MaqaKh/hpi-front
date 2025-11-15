@@ -1,0 +1,31 @@
+<div class="saved-apartments-container">
+  <div class="header">
+    <h2 class="title">Your Saved Apartments ({{ savedApartments.length }})</h2>
+  </div>
+
+  <div class="apartments-list">
+    <div 
+      *ngFor="let apartment of savedApartments" 
+      class="apartment-item"
+      [class.highlighted]="apartment.isHighlighted"
+      (click)="onApartmentClick(apartment)">
+      <div class="apartment-content">
+        <div class="apartment-info">
+          <div class="apartment-title">{{ apartment.title }}</div>
+          <div class="apartment-details">
+            <span>{{ apartment.bedrooms }} bed</span>
+            <span>{{ apartment.bathrooms }} bath</span>
+            <span>{{ apartment.squareMeters }} sq m</span>
+            <span>{{ apartment.district }}</span>
+          </div>
+        </div>
+        <div class="apartment-pricing">
+          <div class="apartment-price">{{ apartment.price }}</div>
+          <div class="price-change" [ngClass]="apartment.priceChange.type">
+            {{ apartment.priceChange.text }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

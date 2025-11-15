@@ -1,0 +1,77 @@
+  <div class="content">
+
+
+    <!-- Price Alerts Section -->
+    <div class="alerts-section">
+      <h3 class="section-subtitle">
+        🔔 Price Alerts
+        <span class="alert-badge">3 new</span>
+      </h3>
+
+      <div class="alerts-container">
+        <!-- Price Drop Alert -->
+        <div class="alert-item price-drop">
+          <div class="alert-header">
+            <div class="alert-icon fire">🔥</div>
+            <div class="alert-content">
+              <div class="alert-title">Sabail District: Prices dropped 3.2% this week</div>
+              <div class="alert-description">
+                Great news! Properties in your watched district are now within your budget range. 
+                Average price dropped to <span class="price-highlight">$1,820/m²</span> from <span class="price-old">$1,880/m²</span>
+              </div>
+            </div>
+          </div>
+          <div class="alert-meta">
+            <span class="alert-time">2 hours ago</span>
+            <div class="alert-actions">
+              <button (click)="onViewProperties()" class="btn btn-primary">View Properties</button>
+              <button (click)="onDismissAlert()" class="btn btn-secondary">Dismiss</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- New Listing Alert -->
+        <div class="alert-item new-listing">
+          <div class="alert-header">
+            <div class="alert-icon location">📍</div>
+            <div class="alert-content">
+              <div class="alert-title">Metro Nizami: New apartment listed 200m from station</div>
+              <div class="alert-description">
+                A 2-bedroom apartment just appeared near your preferred metro station. 
+                Listed at <span class="price-highlight">$195k AZN</span> - 8% below area average!
+              </div>
+            </div>
+          </div>
+          <div class="alert-meta">
+            <span class="alert-time">4 hours ago</span>
+            <div class="alert-actions">
+              <button (click)="onViewApartment()" class="btn btn-primary">View Apartment</button>
+              <button (click)="onSaveForLater()" class="btn btn-secondary">Save for Later</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Saved Property Alert -->
+        <div class="alert-item saved-property">
+          <div class="alert-header">
+            <div class="alert-icon star">⭐</div>
+            <div class="alert-content">
+              <div class="alert-title">Your Saved Apartment: Price reduced!</div>
+              <div class="alert-description">
+                The 3-bedroom apartment you saved in Nasimi has dropped in price. 
+                New price: <span class="price-highlight">$198k AZN</span> 
+                <span class="price-old">$210k AZN</span>
+              </div>
+            </div>
+          </div>
+          <div class="alert-meta">
+            <span class="alert-time">1 day ago</span>
+            <div class="alert-actions">
+              <button (click)="onContactAgent()" class="btn btn-primary">Contact Agent</button>
+              <button (click)="onUpdateAlert()" class="btn btn-secondary">Update Alert</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

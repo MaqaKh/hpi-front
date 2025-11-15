@@ -1,24 +1,38 @@
 <div class="app-container">
   <app-header></app-header>
-
-
-
   <main class="main-content">
-    <section class="hero-section">
-      <div class="hero-content">
-        <h1 class="hero-title">Apartments</h1>
-        <p class="hero-subtitle">Browse listed apartments, trends and availability across Baku.</p>
+
+    <section>
+        <app-filter-bar (moreFilters)="onOpenAdvancedFilters()"></app-filter-bar>
+    </section>
+
+    <!-- Advanced filters modal -->
+    <section>
+      <app-advanced-filter *ngIf="showAdvancedFilter" (close)="showAdvancedFilter=false" (apply)="onAdvancedApply($event)" (reset)="onAdvancedReset()"></app-advanced-filter>
+    </section>
+
+    <!-- Group title, active filters and listings inside the same responsive container -->
+    <section>
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="space-y-6">
+          <div>
+            <app-filter-header></app-filter-header>
+          </div>
+
+          <div>
+            <app-active-filters></app-active-filters>
+          </div>
+
+          <div>
+            <app-listings [items]="pagedListings"></app-listings>
+          </div>
+          <div>
+            <app-pagination [current]="currentPage" [total]="totalPages" [maxPages]="5" (pageChange)="onPageChange($event)"></app-pagination>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="content-section">
-      <!-- TODO: Replace with actual apartments list / components -->
-      <div class="container">
-        <app-filter-bar></app-filter-bar>
-        <p>Apartment listings will appear here.</p>
-      </div>
-    </section>
-
-    <app-footer></app-footer>
+  <app-footer></app-footer>
   </main>
 </div>
